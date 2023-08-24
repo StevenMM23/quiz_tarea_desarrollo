@@ -14,7 +14,10 @@ class _QuestionScreenState extends State<QuestionScreen> {
   List<bool?> userAnswers = [];
 
   void answerQuestion(String selectedAnswer) {
+    //Aqui el identifica en cual pregunta se encuenta
     final currentQuestion = questions[currentQuestionIndex];
+
+    // Aqui el ve si la respuesta que diste con el boton va acorde a la respuesta que tiene la pregunta
     final isCorrect = currentQuestion.correctAnswer.toLowerCase() ==
         selectedAnswer.toLowerCase();
 
@@ -61,8 +64,7 @@ class _QuestionScreenState extends State<QuestionScreen> {
               onTap: () {
                 answerQuestion("Verdadero");
               },
-              isCorrect:
-                  currentQuestion.correctAnswer.toLowerCase() == "verdadero",
+
             ),
           ),
           const SizedBox(height: 40), // Espacio entre los botones
@@ -74,7 +76,7 @@ class _QuestionScreenState extends State<QuestionScreen> {
               onTap: () {
                 answerQuestion("Falso");
               },
-              isCorrect: currentQuestion.correctAnswer.toLowerCase() == "falso",
+
             ),
           ),
           const SizedBox(
